@@ -1,0 +1,9 @@
+name: aarush
+version: '${project.version}'
+main: me.vrom.main.Main
+api-version: 1.18
+authors: [ Vrom ]
+description: My Plugin Progress
+commands:
+  tutorial:
+
