@@ -6,4 +6,5 @@ authors: [ Vrom ]
 description: My Plugin Progress
 commands:
   tutorial:
+  fly:
 
