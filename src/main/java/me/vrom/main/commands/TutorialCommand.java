@@ -1,4 +1,4 @@
-package me.vrom.main;
+package me.vrom.main.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class Command implements CommandExecutor {
+public class TutorialCommand implements CommandExecutor {
 
 
     @Override
