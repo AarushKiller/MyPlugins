@@ -29,7 +29,7 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush v5 has been enabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush v6 has been enabled!");
         registerCommands();
         registerEvents();
         ScoreboardLib.setPluginInstance(this);
@@ -49,7 +49,7 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush v5 has been disabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush v6 has been disabled!");
     }
 
 
