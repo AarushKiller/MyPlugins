@@ -9,3 +9,5 @@ A command which gives items
 A fly command which uses permissions
 
 A pvp event which cancels events based on permissions and sends custom sounds and messages
+
+A scoreboard which loads on join
