@@ -1,8 +1,10 @@
 package me.vrom.main;
 
+import me.tigerhix.lib.scoreboard.ScoreboardLib;
 import me.vrom.main.commands.TutorialCommand;
 import me.vrom.main.commands.FlyCommand;
 import me.vrom.main.events.Events;
+import me.vrom.main.events.JoinScoreboardEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
@@ -13,14 +15,15 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush v4 has been enabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush v5 has been enabled!");
         registerCommands();
         registerEvents();
+        ScoreboardLib.setPluginInstance(this);
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush v4 has been disabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush v5 has been disabled!");
     }
 
 
@@ -33,6 +36,8 @@ public final class Main extends JavaPlugin {
     public void registerEvents() {
         PluginManager pm  = this.getServer().getPluginManager();
         pm.registerEvents(new Events(), this);
+        pm.registerEvents(new JoinScoreboardEvent(), this);
     }
+
 
 }
