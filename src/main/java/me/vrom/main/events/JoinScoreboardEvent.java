@@ -1,5 +1,7 @@
 package me.vrom.main.events;
 
+import me.clip.placeholderapi.PlaceholderAPI;
+
 import me.tigerhix.lib.scoreboard.ScoreboardLib;
 import me.tigerhix.lib.scoreboard.common.EntryBuilder;
 import me.tigerhix.lib.scoreboard.common.Strings;
@@ -13,6 +15,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import me.clip.placeholderapi.PlaceholderAPI;
 
 import java.util.List;
 
@@ -33,12 +36,13 @@ public class JoinScoreboardEvent implements Listener {
 
                         @Override
                         public List<Entry> getEntries(Player player) {
+                            String rank = "%vault_rank";
                             return new EntryBuilder()
                                     .next("&6&lIMPERIAL VALOR")
                                     .blank()
-                                    .next("&cHELLO")
+                                    .next("&cUSERNAME : %player_name%")
                                     .blank()
-                                    .next("&cUSERNAME : " + player.getDisplayName())
+                                    .next("&cRANK : %vault_rank%")
                                     .blank()
                                     .next("&6github.com/AarushKiller")
                                     .build();
