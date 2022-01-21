@@ -7,4 +7,5 @@ depend: [PlaceholderAPI]
 commands:
   tutorial:
   fly:
+  landmine:
 
