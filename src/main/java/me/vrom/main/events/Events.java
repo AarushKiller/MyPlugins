@@ -1,7 +1,10 @@
 package me.vrom.main.events;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.block.Block;
 import org.bukkit.entity.NPC;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,6 +12,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Events implements Listener {
 
@@ -49,6 +56,26 @@ public class Events implements Listener {
         } else {
                 e.setCancelled(false);
             }
+    }
+
+    @EventHandler
+    public void onFall(EntityDamageEvent e) {
+        if(e.getCause() == EntityDamageEvent.DamageCause.FALL) {
+            e.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerEmeraldJump(PlayerMoveEvent e) {
+         Player p = e.getPlayer();
+         Location l = p.getLocation();
+         l.add(0, -1, 0);
+         Block b = l.getBlock();
+         if(b.getType() == Material.EMERALD_BLOCK) {
+             p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 15, 9));
+         } else {
+             return;
+         }
     }
 
 }

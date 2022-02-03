@@ -1,7 +1,5 @@
 package me.vrom.main;
 
-import me.clip.placeholderapi.PlaceholderAPI;
-
 import me.tigerhix.lib.scoreboard.ScoreboardLib;
 import me.vrom.main.NPC.NPCManager;
 import me.vrom.main.commands.LandmineGive;
@@ -14,9 +12,7 @@ import net.jitse.npclib.NPCLib;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
-import org.bukkit.entity.NPC;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -40,7 +36,7 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush v7has been enabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Aarush has been enabled!");
         registerCommands();
         registerEvents();
         ScoreboardLib.setPluginInstance(this);
@@ -61,7 +57,7 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush v7 has been disabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Aarush has been disabled!");
     }
 
 
